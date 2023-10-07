@@ -1,4 +1,6 @@
 import allure
+
+from drom_tests.model.pages.car_filter_script import car_filter_script
 from drom_tests.model.pages.car_filter import car_filter
 from drom_tests.model.pages.login_page import login_page
 
@@ -37,5 +39,12 @@ def test_add_to_favorites(test_browser_configuration, clear_test_artifacts):
     login_page.add_car_to_favorites()
     login_page.click_to_user_favorites_button()
 
+
     # THEN
     login_page.should_have_added_favorite_car()
+
+
+def test_car_filter_script():
+    car_filter_script.given_opened()
+    car_filter_script.select_region('Приморский край')
+    car_filter_script.show_amounts_of_brands()

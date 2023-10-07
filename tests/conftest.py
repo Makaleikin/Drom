@@ -1,12 +1,12 @@
 import os
+import time
+
 import allure
 import pytest
 
 from selene.support.shared import browser
-
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-
 from utils import attachments
 
 
@@ -49,3 +49,10 @@ def clear_test_artifacts():
     elements = browser.all('[class="removeBookmark"]')
     for i in elements:
         i.click()
+
+
+@pytest.fixture(scope='function', autouse=False)
+def test_browser_config_selenium():
+    driver = webdriver.Chrome(executable_path='D:\\ATProject\\Drom\\chromedriver.exe')
+    yield
+    driver.close()
