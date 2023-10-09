@@ -85,7 +85,7 @@ class CarFilter:
 
         @allure.step('Проверяем, что у автомобилей есть пробег')
         def should_have_mileage():
-            browser.all('[class="css-1w11qyo e1lm3vns0"]').by(have.text('км')).should(have.size(20))
+            browser.all('[class="css-1l9tp44 e162wx9x0"]').by(have.text('км')).should(have.size(20))
         should_have_mileage()
 
 
