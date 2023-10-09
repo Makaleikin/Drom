@@ -35,7 +35,7 @@ def test_browser_configuration():
 
     # browser.config.driver = driver
     yield
-    browser.config.hold_browser_open = True
+    browser.config.hold_browser_open = False
     # attachments.add_html(browser)
     # attachments.add_screenshot(browser)
     # attachments.add_logs(browser)
@@ -52,7 +52,7 @@ def clear_test_artifacts():
 
 
 @pytest.fixture(scope='function', autouse=False)
-def test_browser_config_selenium():
+def browser_config_selenium():
     driver = webdriver.Chrome(executable_path='D:\\ATProject\\Drom\\chromedriver.exe')
     yield
     driver.close()

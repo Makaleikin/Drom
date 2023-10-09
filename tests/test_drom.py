@@ -39,7 +39,6 @@ def test_add_to_favorites(test_browser_configuration, clear_test_artifacts):
     login_page.add_car_to_favorites()
     login_page.click_to_user_favorites_button()
 
-
     # THEN
     login_page.should_have_added_favorite_car()
 
